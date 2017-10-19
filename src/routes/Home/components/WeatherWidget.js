@@ -2,9 +2,9 @@ import React from 'react';
 import './HomeView.scss';
 
 // Weather Widget Component
-export const WEATHER_API_KEY = '79cc018cbab34afe9cd94754172509'
-export const PLACES_API_KEY = 'AIzaSyBiDPZbUq13joiGg4wxa-I7TcbX5G1Y6K4'
-export const proxyurl = 'https://galvanize-cors-proxy.herokuapp.com/'
+const WEATHER_API_KEY = 'efbf03f38ab640c3bb2173254172509';
+const PLACES_API_KEY = 'AIzaSyBiDPZbUq13joiGg4wxa-I7TcbX5G1Y6K4';
+const proxyurl = "https://galvanize-cors-proxy.herokuapp.com/";
 
 export class WeatherWidget extends React.Component {
   constructor () {
@@ -36,9 +36,7 @@ export class WeatherWidget extends React.Component {
   }
 
   getWeatherForCity (city) {
-    fetch(
-      `https://api.apixu.com/v1/current.json? key=${WEATHER_API_KEY}&q=${city}`
-    )
+    fetch(`https://api.apixu.com/v1/current.json? key=${WEATHER_API_KEY}&q=${city}`)
       .then(response => {
         if (response.status !== 200) {
           console.log(`Error fetching data. Respons:${response.status}`)
@@ -158,11 +156,9 @@ export class WeatherWidget extends React.Component {
 
   render () {
     return (
-      <div>
-        <div className='container'>
-          {this.getPhotoContainer()}
-          {this.getInfoContainer()}
-        </div>
+      <div className="container">
+        {this.getPhotoContainer()}
+        {this.getInfoContainer()}
         {this.getLocationInput()}
       </div>
     )
