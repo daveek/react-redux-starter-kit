@@ -190,8 +190,11 @@ export class Game extends React.Component{
     } = this.state;
 		return(
     	<div className="container">
-    	  <h3>Game 9 Pin Number</h3>
-    		<hr/>	
+    	  <div className="row">
+          <h3>Game 9 Pin Number</h3>
+    		  <hr/>	
+        </div>
+        <br />
         <div className="row">
           <Stars numOfStars={randomNumberOfStars} />
           <Button selectedNumbers={selectedNumbers}
